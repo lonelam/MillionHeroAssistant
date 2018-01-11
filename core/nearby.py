@@ -13,7 +13,7 @@ import operator
 from functools import partial
 
 from core.fenci import cut
-from core.googlesearch import search_result_numberx
+from core.baiduzhidao import search_result_number
 
 
 def current_fetch(keywords_li):
@@ -63,7 +63,7 @@ def calculate_relation(question, answers):
 
     keywords_li = []
     keywords_li.extend(answers)
-    keywords_li.extend([item + " " + question for item in answers])
+    keywords_li.extend([question + " " + item for item in answers])
 
     results = current_fetch(keywords_li)
     answ_len = len(answers)

@@ -23,7 +23,7 @@ def analyze_current_screen_text(directory=".", compress_level=1):
     print("capture time: ", datetime.now().strftime("%H:%M:%S"))
     screenshot_filename = "screenshot.png"
     save_text_area = os.path.join(directory, "text_area.png")
-    capture_screen(screenshot_filename, directory)
+    #capture_screen(screenshot_filename, directory)
     parse_answer_area(os.path.join(directory, screenshot_filename), save_text_area, compress_level)
     return get_area_data(save_text_area)
 

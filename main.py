@@ -11,6 +11,7 @@ from argparse import ArgumentParser
 
 import operator
 from functools import partial
+import os
 
 from config import app_id
 from config import app_key
@@ -68,6 +69,10 @@ def main():
         return
 
     question, answers = parse_question_and_answer(keywords)
+    #os.system("chromium-browser https://google.com/search?q=" + question)
+    end = time.time()
+    print("use {0} 秒".format(end - start))
+
     print("-" * 50)
     print("Q: ", question)
     print("-" * 50)
