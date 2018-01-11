@@ -89,14 +89,15 @@ def main():
     if question.find('错误') != -1 or question.find('不') != -1:
         is_face = False
     summary_li = sorted(summary.items(), key=operator.itemgetter(1), reverse=is_face)
+    print(summary_li[0][0])
     print("-" * 50)
     print("\n".join([a + ":" + str(b) for a, b in summary_li]))
     print("*" * 50)
-    print(summary_li[0][0])
-
+    for i in range(len(answers)):
+        if answers[i] == summary_li[0][0]:
+            print(i + 1)
     end = time.time()
     print("use {0} 秒".format(end - start))
-
 
 if __name__ == "__main__":
     main()
